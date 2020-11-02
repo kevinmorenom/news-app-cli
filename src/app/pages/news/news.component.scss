@@ -1,0 +1,295 @@
+ul {
+    width: 100%;
+    li {
+        list-style: none;
+        // display: inline-block;
+    }
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: darkgrey;
+    font-family: Arial;
+}
+
+
+/* Links inside the navbar */
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+/* The dropdown container */
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+    .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: darkgrey;
+        font-family: inherit;
+        /* Important for vertical align on mobile phones */
+        margin: 0;
+        /* Important for vertical align on mobile phones */
+    }
+}
+
+
+/* Add a red background color to navbar links on hover */
+
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+    background-color: green;
+}
+
+
+/* Dropdown content (hidden by default) */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0p grey;
+    z-index: 1;
+}
+
+
+/* Links inside the dropdown */
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+
+/* Add a grey background color to dropdown links on hover */
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+
+/* Show the dropdown menu on hover */
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.grid {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.grid>div {
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+}
+
+.grid:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (min-width: 0px) {
+    .grid>.xs-10 {
+        width: 10%;
+    }
+    .grid>.xs-25 {
+        width: 25%;
+    }
+    .grid>.xs-33 {
+        width: 33%;
+    }
+    .grid>.xs-50 {
+        width: 50%;
+    }
+    .grid>.xs-67 {
+        width: 67%;
+    }
+    .grid>.xs-75 {
+        width: 75%;
+    }
+    .grid>.xs-90 {
+        width: 90%;
+    }
+    .grid>.xs-100 {
+        width: 100%;
+    }
+    .grid>div.not-in-xs {
+        display: none;
+    }
+    .grid>div.in-xs {
+        display: inherit;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .grid>.sm-10 {
+        width: 10%;
+    }
+    .grid>.sm-25 {
+        width: 25%;
+    }
+    .grid>.sm-33 {
+        width: 33%;
+    }
+    .grid>.sm-50 {
+        width: 50%;
+    }
+    .grid>.sm-67 {
+        width: 67%;
+    }
+    .grid>.sm-75 {
+        width: 75%;
+    }
+    .grid>.sm-90 {
+        width: 90%;
+    }
+    .grid>.sm-100 {
+        width: 100%;
+    }
+    .grid>div.not-in-sm {
+        display: none;
+    }
+    .grid>div.in-sm {
+        display: inherit;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .grid>.md-10 {
+        width: 10%;
+    }
+    .grid>.md-25 {
+        width: 25%;
+    }
+    .grid>.md-33 {
+        width: 33%;
+    }
+    .grid>.md-50 {
+        width: 50%;
+    }
+    .grid>.md-67 {
+        width: 67%;
+    }
+    .grid>.md-75 {
+        width: 75%;
+    }
+    .grid>.md-90 {
+        width: 90%;
+    }
+    .grid>.md-100 {
+        width: 100%;
+    }
+    .grid>div.not-in-md {
+        display: none;
+    }
+    .grid>div.in-md {
+        display: inherit;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .grid>.lg-10 {
+        width: 10%;
+    }
+    .grid>.lg-25 {
+        width: 25%;
+    }
+    .grid>.lg-33 {
+        width: 33%;
+    }
+    .grid>.lg-50 {
+        width: 50%;
+    }
+    .grid>.lg-67 {
+        width: 67%;
+    }
+    .grid>.lg-75 {
+        width: 75%;
+    }
+    .grid>.lg-90 {
+        width: 90%;
+    }
+    .grid>.lg-100 {
+        width: 100%;
+    }
+    .grid>div.not-in-lg {
+        display: none;
+    }
+    .grid>div.in-lg {
+        display: inherit;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .grid>.xl-10 {
+        width: 10%;
+    }
+    .grid>.xl-25 {
+        width: 25%;
+    }
+    .grid>.xl-33 {
+        width: 33%;
+    }
+    .grid>.xl-50 {
+        width: 50%;
+    }
+    .grid>.xl-67 {
+        width: 67%;
+    }
+    .grid>.xl-75 {
+        width: 75%;
+    }
+    .grid>.xl-90 {
+        width: 90%;
+    }
+    .grid>.xl-100 {
+        width: 100%;
+    }
+    .grid>div.not-in-xl {
+        display: none;
+    }
+    .grid>div.in-xl {
+        display: inherit;
+    }
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+#news-container>div {
+    height: 250px;
+    border: solid 1px #4e4d4d;
+}
+
+#news-container>div img {
+    width: 100%;
+}
