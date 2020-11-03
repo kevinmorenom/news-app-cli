@@ -3,26 +3,28 @@
         <button class="dropbtn">Fuente
         <i class="fa fa-caret-down"></i>
       </button>
-        <div class="dropdown-content">
-            <a href="#">MX</a>
-            <a href="#">US</a>
-            <a href="#">FR</a>
-        </div>
-        <input type="text" placeholder="Búsqueda">
-        <button type="submit">Buscar</button>
+        <form name="search" (submit)="doSearch()">
+            <select name="source" [(ngModel)]="source">
+                <option *ngFor="let item of sources" value="{{item.id}}">{{item.name}}</option>
+            </select>
+            <input name="query" [(ngModel)]="query" type="text" placeholder="Búsqueda">
+            <button type="submit">Buscar</button>
+        </form>
     </div>
 </div>
 
-<div id="news-container">
-    <div class="grid">
-        <div *ngFor="let item of news" class='sm-50 md-25'>
-            <a href="{{item.url}}">{{item.title}} </a>
-            <img *ngIf="item.urlToImage" src="{{item.urlToImage}}" alt="news image">
-            <!-- {{#if urlToImage}}
-            <img src="{{urlToImage}}" alt=""> {{else}}
-            <img src="https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-illustration-132483053.jpg" alt=""> {{/if}} -->
-        </div>
+<div id="news-container" class="grid">
+
+    <div *ngIf="news.length==0">
+        <p>No hay noticias para mostrar</p>
     </div>
+
+    <div *ngFor="let item of news" class='sm-50 md-25'>
+        <a href="{{item.url}}">{{item.title}} </a>
+        <img src="{{item.urlToImage || 'https://angelapinyo.com/wp-content/themes/photobook/images/blank.png' }}" alt="news image">
+
+    </div>
+
 </div>
 <!-- 
 <ul>

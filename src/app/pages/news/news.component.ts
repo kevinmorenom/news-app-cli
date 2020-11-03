@@ -10,26 +10,36 @@ export class NewsComponent implements OnInit, OnChanges{
   title: string = 'News Component' ;
 
   news=[];
+  sources=[];
+  source: string = '';
+  query: string = '';
 
   constructor(private newsService: NewsService) {}
 
   ngOnInit(): void {
-    this.newsService.getNews().then(data =>
-    {
-      console.log("hola");
-      this.news = data;
-    }).catch(err=>{
-      console.error(err);
-    });
-    // setTimeout(()=>{
-    //   this.news.push({
-    //     url:'#',
-    //     title:'Nueva noticia'
-    //   })
-    // },10000);
+    this.getSources();
   }
 
     ngOnChanges(){
 
+    }
+
+    getSources(){
+      this.newsService.getSources().then(data =>
+        {
+          this.sources = data;
+        }).catch(err=>{
+          console.error(err);
+        });
+
+    }
+
+    doSearch(){
+      this.newsService.getNews(this.source,this.query).then(data =>
+        {
+          this.news = data;
+        }).catch(err=>{
+          console.error(err);
+        });
     }
 }

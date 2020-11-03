@@ -93,6 +93,7 @@ ul {
 img {
     max-width: 100%;
     max-height: 100%;
+    object-fit: scale-down;
 }
 
 .grid {
@@ -290,6 +291,6 @@ body {
     border: solid 1px #4e4d4d;
 }
 
-#news-container>div img {
-    width: 100%;
-}
+// #news-container>div img {
+//     width: 100%;
+// }
