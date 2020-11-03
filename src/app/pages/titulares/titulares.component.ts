@@ -9,7 +9,7 @@ import { NewsService } from '../../globals/services/news.service';
 export class TitularesComponent implements OnInit {
 
 
-  news: any[]=[];
+  news: any[] = [];
   country: string= 'mx';
 
   constructor(private newsService: NewsService) {};

@@ -9,10 +9,10 @@ import { NewsService } from '../../globals/services/news.service';
 export class NewsComponent implements OnInit, OnChanges{
   title: string = 'News Component' ;
 
-  news=[];
-  sources=[];
+  news = [];
+  sources = [];
   source: string = '';
-  query: string = '';
+  query = '';
 
   constructor(private newsService: NewsService) {}
 
@@ -20,26 +20,27 @@ export class NewsComponent implements OnInit, OnChanges{
     this.getSources();
   }
 
-    ngOnChanges(){
+  ngOnChanges(){
 
-    }
+  }
 
-    getSources(){
-      this.newsService.getSources().then(data =>
-        {
-          this.sources = data;
-        }).catch(err=>{
-          console.error(err);
-        });
+  getSources(){
+    this.newsService.getSources().then(data =>
+      {
+        this.sources = data;
+      }).catch(err=>{
+         console.error(err);
+      });
 
-    }
+  }
 
-    doSearch(){
-      this.newsService.getNews(this.source,this.query).then(data =>
-        {
-          this.news = data;
-        }).catch(err=>{
-          console.error(err);
-        });
-    }
+  doSearch(){
+    this.newsService.getNews(this.source,this.query).then(data =>
+      {
+        this.news = data;
+      }).catch(err=>{
+        console.error(err);
+      });
+  }
+
 }
