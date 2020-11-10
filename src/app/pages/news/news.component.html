@@ -13,12 +13,4 @@
     </div>
 </div>
 
-<div id="news-container" class="grid">
-    <div *ngIf="news.length==0">
-        <p>No hay noticias para mostrar</p>
-    </div>
-    <div *ngFor="let item of news" class='sm-50 md-25'>
-        <a href="{{item.url}}">{{item.title}} </a>
-        <img src="{{item.urlToImage || 'https://angelapinyo.com/wp-content/themes/photobook/images/blank.png' }}" alt="news image">
-    </div>
-</div>
+<app-grid-list [items]="news"></app-grid-list>

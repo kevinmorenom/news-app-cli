@@ -42,5 +42,4 @@ export class NewsComponent implements OnInit, OnChanges{
         console.error(err);
       });
   }
-
 }

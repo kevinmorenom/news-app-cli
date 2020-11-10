@@ -1,0 +1,15 @@
+<!-- 
+<div class="topnav">
+    <a class="title active">News App</a>
+    <a routerLink="/titulares">Titulares</a>
+    <a routerLink="/noticias">Noticias</a>
+</div> -->
+<header>
+    <span>News App</span>
+    <ul *ngIf="isLoggedIn">
+        <li><a routerLink="/titulares">Titulares</a>
+            <li> <a routerLink="/noticias">Noticias</a></li>
+            <li><button (click)="logout()">Cerrar Sesión</button></li>
+    </ul>
+
+</header>

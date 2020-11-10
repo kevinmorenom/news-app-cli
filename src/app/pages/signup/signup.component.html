@@ -1,0 +1,26 @@
+<p>signup works!</p>
+<form [formGroup]="form" (submit)="crearUsuario()">
+    <div>
+        <label for="name">Nombre</label>
+        <input type="text" name="name" formControlName="name">
+    </div>
+    <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" formControlName="email">
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" name="password" formControlName="password">
+    </div>
+    <div>
+        <label for="confirmpassword">Confirm password</label>
+        <input type="password" name="confirmpassword" formControlName="confirmpassword">
+    </div>
+    <p *ngIf="form.errors && form.errors.mismatch">Las contraseñas no coinciden</p>
+    <div>
+        <strong>{{form.valid}}</strong>
+    </div>
+    <div>
+        <button [disabled]="form.invalid">Enviar</button>
+    </div>
+</form>

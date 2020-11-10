@@ -1,19 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from '../../globals/services/news.service';
 
+
 @Component({
   selector: 'app-titulares',
   templateUrl: './titulares.component.html',
   styleUrls: ['./titulares.component.scss']
 })
-export class TitularesComponent implements OnInit {
 
+export class TitularesComponent implements OnInit {
 
   news: any[] = [];
   country: string= 'mx';
 
-  constructor(private newsService: NewsService) {};
+  constructor(
+    private newsService: NewsService) {};
   ngOnInit(): void {
+    
     this.getHeadlines();
   }
 
@@ -30,4 +33,7 @@ export class TitularesComponent implements OnInit {
     this.getHeadlines(this.country);
   }
 
+  onItemClick(event){
+    console.log("Padre : ",event);
+  }
 }

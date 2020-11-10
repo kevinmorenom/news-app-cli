@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+import { environment } from '../../../environments/environment';
 
-@Injectable({
+ @Injectable({
   providedIn: 'root'
 })
 export class NewsService {
@@ -10,15 +11,15 @@ export class NewsService {
 
 
   getNews(source='',query=''): Promise<any>{
-    return this.http.get('http://localhost:3001/api/noticias/'+source+'?search='+query).toPromise();
+    return this.http.get(environment.apiURl+'noticias/'+source+'?search='+query).toPromise();
   }
 
   getHeadlines(country= ''): Promise<any>{
-    return this.http.get('http://localhost:3001/api/topheadlines/'+country).toPromise();
+    return this.http.get(environment.apiURl+'topheadlines/'+country).toPromise();
   }
 
   getSources(): Promise<any>{
-    return this.http.get('http://localhost:3001/api/sources/').toPromise();  
+    return this.http.get(environment.apiURl+'sources/').toPromise();  
   }
 
 }
